@@ -4,6 +4,11 @@ FROM python:3.11-bullseye
 # Avoid prompts from apt
 ENV DEBIAN_FRONTEND=noninteractive
 
+WORKDIR /workspace
+
+# ARG DEEPSEEK_API_KEY
+# ENV DEEPSEEK_API_KEY=${DEEPSEEK_API_KEY}
+
 # Install system dependencies including texlive-full
 RUN apt-get update && apt-get install -y --no-install-recommends \
     # wget \
@@ -33,11 +38,11 @@ RUN pip install --no-cache-dir \
     anthropic==0.34.0 \
     aider-chat==0.50.1 \
     backoff==2.2.1 \
-    openai==1.40.6
+    openai==1.40.6 \
 #     matplotlib==3.9.2 \
 #     pypdf==4.3.1 \
 #     pymupdf4llm==0.0.10 \
-#     torch==2.4.0 \
+    torch==2.4.0 
 #     numpy==1.26.4 \
 #     transformers==4.44.0 \
 #     datasets==2.21.0 \
@@ -56,17 +61,17 @@ RUN pip install --no-cache-dir \
 
 # Clone the AI-Scientist repository
 # WORKDIR /app
-RUN git clone https://github.com/miyaki-mac/AI-Novelist.git /workspace
+# RUN git clone https://github.com/miyaki-mac/AI-Novelist.git /workspace
 
 # Set working directory to AI-Scientist
 # WORKDIR /app/AI-Scientist
 
 # Set working directory
-WORKDIR /workspace
+# WORKDIR /workspace
 
-RUN python data/novel/prepare.py 
+# RUN python data/novel/prepare.py 
 
-RUN cd templates/fascinating_spin_off && python experiment.py
+# RUN cd templates/fascinating_spin_off && python experiment.py
 
 # # Set up baseline runs
 # RUN for dir in templates/*/; do \
@@ -77,6 +82,8 @@ RUN cd templates/fascinating_spin_off && python experiment.py
 #         cd /app/AI-Scientist || exit; \
 #     fi \
 # done
+
+# RUN python launch_novelist.py 
 
 # # Create entrypoint script
 # RUN printf '#!/bin/bash\n\
