@@ -37,4 +37,4 @@ python launch_novelist.py --num-ideas 2
 # Examples of Output:
 太宰 治「走れメロス」のスピンオフ作品  
 ※参照先：青空文庫 走れメロス（[URL](https://www.aozora.gr.jp/cards/000035/card1567.html#download)）  
-[View Documentation](/AI-Novelist/examples/走れメロス_Spin-off.pdf)
+[View Documentation](/AI-Novelist/examples/走れメロス_Spin-off.pdf](https://github.com/miyaki-mac/AI-Novelist/blob/master/examples/%E8%B5%B0%E3%82%8C%E3%83%A1%E3%83%AD%E3%82%B9_Spin-off.pdf))
