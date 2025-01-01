@@ -26,7 +26,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 #     libxmlsec1-dev \
 #     libffi-dev \
 #     liblzma-dev \
-#     texlive-full \
+    texlive-full \
+    # texlive-latex-base \
     && rm -rf /var/lib/apt/lists/*
 
 # Upgrade pip
