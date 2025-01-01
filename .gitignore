@@ -1,0 +1,7 @@
+__pycache__/
+results/
+run_*/
+ideas.json
+original_work_info.json
+notevl.txt
+.git

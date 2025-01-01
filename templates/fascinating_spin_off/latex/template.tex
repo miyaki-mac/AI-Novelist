@@ -1,0 +1,67 @@
+\documentclass[12pt]{book}
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage[utf8]{inputenc} % UTF-8のサポート
+\usepackage[T1]{fontenc}    % フォントエンコード
+\usepackage{setspace}       % 行間の調整
+\usepackage{lmodern}        % モダンフォント
+\usepackage{titlesec}       % 見出しの調整
+\usepackage{fancyhdr}       % ヘッダー・フッターの設定
+\usepackage{graphicx}       % 画像挿入
+
+% 行間を1.5倍に設定
+\onehalfspacing
+
+% ヘッダーとフッターの設定
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyhead[LE,RO]{\thepage} % ページ番号
+\fancyhead[RE,LO]{\textit{Novel Title}}
+
+% セクション見出しのスタイル
+\titleformat{\chapter}[display]
+  {\bfseries\Huge}{\chaptername\ \thechapter}{20pt}{\Huge}
+\titleformat{\section}{\bfseries\Large}{\thesection}{1em}{}
+
+% 表紙情報
+\title{Novel Title}
+\author{Author Name}
+\date{}
+
+\begin{document}
+
+% Title
+\frontmatter
+\maketitle
+
+% Table of Contents
+\tableofcontents
+
+\mainmatter
+
+% Exposition
+\chapter*{Exposition}
+The story begins by introducing the world, characters, and background necessary to immerse readers in the narrative. This section sets the tone and prepares for the journey ahead.
+
+% Rising Action
+\chapter*{Rising_Action}
+As the plot unfolds, challenges emerge and tensions rise. The protagonist faces obstacles, and key conflicts begin to take shape, driving the narrative forward.
+
+% Climax
+\chapter*{Climax}
+This is the narrative's most intense and critical point. The protagonist confronts their greatest challenge, and the story's central conflict reaches its peak.
+
+% Falling Action
+\chapter*{Falling_Action}
+Following the climax, the aftermath of the conflict is explored. Loose ends are tied up, and the characters begin to adapt to the changes brought by the events.
+
+% Denouement
+\chapter*{Denouement}
+The story concludes with a reflection on its themes and the characters' growth. This section provides a satisfying resolution to the narrative.
+
+% Afterword
+\backmatter
+\chapter*{Afterword}
+Completing this novel has been a journey filled with inspiration and challenges. Thank you, dear readers, for joining me on this adventure. I hope to see you in future stories.
+
+\end{document}
