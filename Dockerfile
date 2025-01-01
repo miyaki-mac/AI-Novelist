@@ -40,8 +40,8 @@ RUN pip install --no-cache-dir \
     backoff==2.2.1 \
     openai==1.40.6 \
 #     matplotlib==3.9.2 \
-#     pypdf==4.3.1 \
-#     pymupdf4llm==0.0.10 \
+    pypdf==4.3.1 \
+    pymupdf4llm==0.0.10 \
     torch==2.4.0 
 #     numpy==1.26.4 \
 #     transformers==4.44.0 \

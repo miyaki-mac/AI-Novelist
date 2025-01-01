@@ -126,28 +126,12 @@ def do_idea(
     shutil.copytree(base_dir, destination_dir, dirs_exist_ok=True)
     with open(osp.join(base_dir, "run_0", "results.json"), "r") as f:
         baseline_results = json.load(f)
-    notes = osp.join(folder_name, "notes.txt")
     exp_file = osp.join(folder_name, "experiment.py")
-    with open(notes, "w") as f:
-        f.write(f"## Run 0: OverAll Vision \n")
-        f.write(f"# Narrative Perspective: {idea['narrative_perspective']}\n")
-        f.write(f"# Theme: {idea['theme']}\n")
-        f.write(f"# Novel Structure Models: {idea['novel_structure_models']}\n")
-        f.write(f"# Target Demographics: {idea['target_demographics']}\n")
-        f.write(f"# Core Connection: {idea['core_connection']}\n")
-        f.write(f"# Unique Hook: {idea['unique_hook']}\n")
-        f.write(f"# Protagonist Choice: {idea['protagonist_choice']}\n")
-        f.write(f"# Tone and Style: {idea['tone_and_style']}\n")
-        f.write(f"# World Expansion: {idea['world_expansion']}\n")
-        f.write(f"# Fan Service: {idea['fan_service']}\n")
-        f.write(f"## Run 0: The first draft \n")
-        f.write(f"task: {baseline_results['task_prompt']}\n")
-        f.write(f"The first draft of the spin-off work: {baseline_results['model_response']}\n")
     try:
         print_time()
         print(f"*Starting idea: {idea_name}*")
         ## PERFORM EXPERIMENTS
-        fnames = [exp_file, notes]
+        fnames = [exp_file]
         io = InputOutput(
             yes=True, chat_history_file=f"{folder_name}/{idea_name}_aider.txt"
         )
@@ -183,7 +167,7 @@ def do_idea(
         ## PERFORM WRITEUP
         if writeup == "latex":
             writeup_file = osp.join(folder_name, "latex", "template.tex")
-            fnames = [exp_file, writeup_file, notes]
+            fnames = [exp_file, writeup_file]
             if model == "deepseek-coder-v2-0724":
                 main_model = Model("deepseek/deepseek-coder")
             elif model == "llama3.1-405b":

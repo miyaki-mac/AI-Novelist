@@ -282,7 +282,6 @@ if __name__ == "__main__":
     folder_name = args.folder
     idea_name = osp.basename(folder_name)
     exp_file = osp.join(folder_name, "experiment.py")
-    notes = osp.join(folder_name, "notes.txt")
     model = args.model
     writeup_file = osp.join(folder_name, "latex", "template.tex")
     ideas_file = osp.join(folder_name, "ideas.json")
@@ -294,7 +293,7 @@ if __name__ == "__main__":
             break
     if idea["Name"] not in idea_name:
         raise ValueError(f"Idea {idea_name} not found")
-    fnames = [exp_file, writeup_file, notes]
+    fnames = [exp_file, writeup_file]
     io = InputOutput(yes=True, chat_history_file=f"{folder_name}/{idea_name}_aider.txt")
     if args.model == "deepseek-coder-v2-0724":
         main_model = Model("deepseek/deepseek-coder")
